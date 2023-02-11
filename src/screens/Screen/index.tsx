@@ -1,4 +1,6 @@
 import { FC, ReactNode } from 'react';
+import { MainNav } from '../../components/MainNav';
+import './styles.css';
 
 interface IProps {
   children: ReactNode;
@@ -10,7 +12,10 @@ export const Screen: FC<IProps> = ({
 }) => {
   return (
     <div className='screen'>
-      { children }
+      <MainNav />
+      <div className='screen-content'>
+        { children }
+      </div>
     </div>
   );
 };
