@@ -1,10 +1,13 @@
 import { BrowserRouter } from "react-router-dom";
+import { UserSessionProvider } from "./contexts/user-session";
 import { MainRouter } from "./routers/main";
 
 function App() {
   return (
     <BrowserRouter>
-      <MainRouter />
+      <UserSessionProvider>
+        <MainRouter />
+      </UserSessionProvider>
     </BrowserRouter>
   )
 }
