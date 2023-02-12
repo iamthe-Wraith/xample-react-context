@@ -20,7 +20,7 @@ export const MainNav: FC<IProps> = ({ className }) => {
     }
 
     return (
-      <Link to='/sign-in'>
+      <Link to='/signin'>
         Sign In
       </Link>
     )
