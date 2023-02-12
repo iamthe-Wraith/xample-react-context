@@ -37,3 +37,12 @@
   background: none;
   border: none;
 }
+
+.main-nav .user-data-container {
+  display: flex;
+  align-items: center;
+}
+
+.main-nav .user-data-container > *:not(:last-child) {
+  margin-right: 1rem;
+}

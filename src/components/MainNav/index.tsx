@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
 import { useUserSession } from "../../contexts/user-session";
+import { Avatar } from "../Avatar";
 import "./styles.css";
 
 interface IProps {
@@ -13,9 +14,14 @@ export const MainNav: FC<IProps> = ({ className }) => {
   const renderRightContent = () => {
     if (userSession.isSignedIn) {
       return (
-        <button className='sign-out'>
-          Sign Out
-        </button>
+        <div className='user-data-container'>
+          <button className='sign-out'>
+            Sign Out
+          </button>
+          <Link to='/profile'>
+            <Avatar username={ userSession.data?.username! } />
+          </Link>
+        </div>
       );
     }
 
