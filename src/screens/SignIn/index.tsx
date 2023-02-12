@@ -1,16 +1,18 @@
 import { FC, FormEventHandler, useCallback, useState } from 'react';
 import { Button } from '../../components/Button';
 import { InputField } from '../../components/InputField';
+import { useUserSession } from '../../contexts/user-session';
 import { Screen } from '../Screen';
 import './styles.css';
 
 export const SignIn: FC = () => {
+  const userSession = useUserSession();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const onSubmit: FormEventHandler<HTMLFormElement> = useCallback((e) => {
     e.preventDefault();
-    console.log('Signing in...', username, password);
+    userSession?.signin(username, password);
   }, [username, password]);
 
   return (
@@ -41,7 +43,7 @@ export const SignIn: FC = () => {
         />
 
         <div className='buttons-container'>
-          <Button disabled={ !username || !password}>
+          <Button disabled={ !username || !password || userSession?.isProcessing }>
             Sign In
           </Button>
         </div>
