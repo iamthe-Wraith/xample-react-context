@@ -11,6 +11,7 @@ interface IUserSession {
   isProcessing: boolean;
   isSignedIn: boolean;
   signin: (username: string, password: string) => void;
+  signout: () => void;
 }
 
 interface IProps {
@@ -42,15 +43,30 @@ export const UserSessionProvider: FC<IProps> = ({ children }) => {
     }, 500);
   }, []);
 
+  const signout = useCallback(() => {
+    setProcessing(true);
+    
+    // using setTimeout to simulate a request
+    console.log('POST /api/signout');
+
+    setTimeout(() => {
+      setData(null);
+      setProcessing(false);
+      navigate('/');
+    }, 500);
+  }, []);
+
   const userSession: IUserSession = useMemo(() => ({
     data,
     isProcessing: processing,
     isSignedIn: !!data?.id,
     signin,
+    signout,
   }), [
     data,
     processing,
     signin,
+    signout,
   ]);
 
   return (

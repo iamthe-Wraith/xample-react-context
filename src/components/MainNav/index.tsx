@@ -15,7 +15,7 @@ export const MainNav: FC<IProps> = ({ className }) => {
     if (userSession.isSignedIn) {
       return (
         <div className='user-data-container'>
-          <button className='sign-out'>
+          <button className='sign-out' onClick={userSession.signout}>
             Sign Out
           </button>
           <Link to='/profile'>
