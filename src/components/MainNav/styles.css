@@ -11,20 +11,29 @@
   background-color: #136f93;
 }
 
-.main-nav a {
+.main-nav a,
+.main-nav button {
   font-family: Arial, Helvetica, sans-serif;
   text-decoration: none;
 }
 
 .main-nav a:hover,
-.main-nav a:focus-within {
+.main-nav a:focus-within,
+.main-nav button:hover,
+.main-nav button:focus-within {
   text-decoration: underline;
 }
 
-.main-nav a:hover {
+.main-nav a:hover,
+.main-nav button:hover {
   cursor: pointer;
 }
 
 .main-nav .logo {
   font-size: 3rem;
+}
+
+.main-nav .sign-out {
+  background: none;
+  border: none;
 }
