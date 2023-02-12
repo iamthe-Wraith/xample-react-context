@@ -14,7 +14,7 @@ export const useUserSession = () => useContext(UserSessionContext);
 
 export const UserSessionProvider: FC<IProps> = ({ children }) => {
   const userSession: IUserSession = useMemo(() => ({
-    isSignedIn: true,
+    isSignedIn: false,
   }), []);
 
   return (

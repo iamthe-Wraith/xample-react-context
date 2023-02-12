@@ -1,0 +1,28 @@
+.input-field {
+  display: flex;
+  flex-direction: column;
+  margin: 4px;
+}
+
+.input-field * {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.input-field label {
+  font-size: 1.2rem;
+}
+
+.input-field input {
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  border: 1px solid #3e3e3e;
+  border-radius: 4px;
+  background: #595959;
+  outline: none;
+}
+
+.input-field input:focus-within {
+  border: 1px solid #136f93;
+  outline: 1px dashed #136f93;
+  outline-offset: 1px;
+}

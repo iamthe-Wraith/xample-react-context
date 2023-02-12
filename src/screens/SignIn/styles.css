@@ -1,0 +1,19 @@
+.signin-form {
+  display: block;
+  max-width: 30rem;
+  margin: 5rem auto;
+}
+
+.signin-form h1 {
+  margin-bottom: 1rem;
+}
+
+.signin-form .input-field {
+  margin-bottom: 1rem;
+}
+
+.signin-form .buttons-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
